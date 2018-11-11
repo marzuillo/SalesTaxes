@@ -32,6 +32,7 @@ Input 2:
 
 
 Input 3:
+
 1 imported bottle of perfume at 27.99
 
 1 bottle of perfume at 18.99
