@@ -68,9 +68,9 @@ public class ShoppingBasket {
 				imported = " imported";
 			}
 			builder.append(item.getQuantity() + imported + " " + item.getProduct().getProductName() + ": "
-					+ item.getfinalPrice() + "\r\n");
+					+ item.getfinalPrice() + "\n");
 		}
-		builder.append("Sales Taxes: " + getTotalTaxes() + "\r\n");
+		builder.append("Sales Taxes: " + getTotalTaxes() + "\n");
 		builder.append("Total: " + getTotal());
 
 		return builder.toString();
@@ -87,11 +87,11 @@ public class ShoppingBasket {
 				imported = " imported";
 			}
 			builder.append(item.getQuantity() + imported + " " + item.getProduct().getProductName() + " at "
-					+ item.getOriginalPrice() + "\r\n");
+					+ item.getOriginalPrice() + "\n");
 		}
 
 		//remove the last two characters "\r\n"
-		return builder.toString().substring(0, builder.toString().length() - 2);
+		return builder.toString().substring(0, builder.toString().length() - 1);
 	}
 
 }

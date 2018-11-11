@@ -27,6 +27,8 @@ public class DataSetLoader {
 	ClassLoader classLoader = getClass().getClassLoader();
 	try {
 	    result = IOUtils.toString(classLoader.getResourceAsStream(fileName));
+	    //to maintain the same results on different systems
+	    result = result.replaceAll("\r", ""); 
 	} catch (IOException e) {
 		e.printStackTrace();
 	}
