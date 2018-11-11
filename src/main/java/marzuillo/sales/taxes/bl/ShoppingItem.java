@@ -120,6 +120,32 @@ public class ShoppingItem {
 		}
 		return result.setScale(2, RoundingMode.DOWN);
 	}
+
+// This method reflect the specification but not work fine for the input supplied
+//	
+//	test on 1.0 result:1.0
+//	test on 1.01 result:1.0
+//	test on 1.02 result:1.0
+//	test on 1.03 result:1.05
+//	test on 1.04 result:1.05
+//	test on 1.05 result:1.05
+//	test on 1.06 result:1.05
+//	test on 1.07 result:1.05
+//	test on 1.08 result:1.1
+//	test on 1.09 result:1.1
+//	test on 2.0 result:2.0
+//	test on 2.01 result:2.0
+//	test on 2.02 result:2.0
+//	test on 2.03 result:2.05
+//	
+//	/**
+//	 * round to nearest 0.05
+//	 * @param value
+//	 * @return
+//	 */
+//	public static BigDecimal rounding(BigDecimal value) {
+//		return BigDecimal.valueOf(Math.round(value.doubleValue() * 20) / 20.0);
+//	}
 	
 	
 	public Product getProduct() {
@@ -138,6 +164,10 @@ public class ShoppingItem {
 		this.quantity = quantity;
 	}
 
+	/**
+	 * Price without taxes
+	 * @return
+	 */
 	public BigDecimal getOriginalPrice() {
 		return originalPrice;
 	}
